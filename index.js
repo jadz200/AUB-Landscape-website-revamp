@@ -78,8 +78,6 @@ MongoClient.connect(uri, { useNewUrlParser: true, useUnifiedTopology: true })
         let allPlantsCollection = client.db("landscapeAUB").collection("allPlants");
         let messages = client.db("landscapeAUB").collection("messages");
 
-        //------------------ANTHONY START------------------//
-
         //mail client -- just for testing
         var transporter = nodemailer.createTransport({
             service: 'gmail',
@@ -677,9 +675,7 @@ MongoClient.connect(uri, { useNewUrlParser: true, useUnifiedTopology: true })
 
         })
 
-        //------------------ANTHONY END------------------//
 
-        //------------------PAUL START------------------//
         app.get("/allplants", (req, res) => {
             console.log(">>>>>>>>>>>>>>>>>>in plants");
             console.log(req.query.type);
@@ -768,9 +764,6 @@ MongoClient.connect(uri, { useNewUrlParser: true, useUnifiedTopology: true })
             }
 
         })
-        //------------------PAUL END------------------//
-
-        //------------------JAD START------------------//
 
         app.get("/SearchByName", (req, res) => {
             console.log(">>>>>>>>>>>>>>>>>>in searchByName");
@@ -810,7 +803,6 @@ MongoClient.connect(uri, { useNewUrlParser: true, useUnifiedTopology: true })
                 })
                 .catch(error => console.error(error))
         });
-        //------------------JAD END------------------//
         app.listen(port, () => {
             console.log(`listening at http://localhost:${port}`)
         })
