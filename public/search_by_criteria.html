@@ -1,0 +1,1687 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="author" content="Anthony Kahwaji">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <script src="/javascript/search_by_criteria.js" type="text/javascript"></script>
+    <script src="https://kit.fontawesome.com/a12d4bda75.js" crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link href="/css/search_by_criteria.css" type="text/css" rel="stylesheet" />
+    <link href="css/header-footer.css" type="text/css" rel="stylesheet" />
+    <title>Search By Criteria</title>
+
+
+</head>
+
+<body>
+    <header>
+        <div class="topheader">
+            <div class="logo_name">
+                <a href="/"><img src="https://landscapeplants.aub.edu.lb/images/logo.png"  class="aub_logo"></a>
+                <h6 id="landscape">Landscape design & Ecosystem Management</h6>    
+                <h8 id="faculty">faculty of agriculture and food sciences</h8><br>
+                <h5 id="database"><strong>AUB Landscape and Plant Database</strong></h5>
+            </div>
+            <div id="searches_main">
+                <a class="SearchLink" href="/SearchByName" id="SearchByNameButton">
+                    <div class="searches">
+                        <img id="search_images1" src="https://landscapeplants.aub.edu.lb/images/tab_search_small.png">
+                        <span>Search by <br> name</span>
+                    </div>
+                </a>            
+                <a class="SearchLink" href="/SearchByCriteria" id="SearchByCriteriaButton" >
+                    <div class="searches">
+                        <img id="search_images2" src="https://landscapeplants.aub.edu.lb/images/tab_criteria.png">
+                        <span>Search by <br> Criteria</span>
+                    </div>
+                </a>
+                <a class="SearchLink" href="/plantIdentification" id="PlantIdentificationBurron">            
+                    <div class="searches">
+                        <img id="search_images3" src="https://landscapeplants.aub.edu.lb/images/tab_identification.png">
+                        <span>Plant <br> Indentification</span>
+                    </div>
+                </a>
+            </div>
+        </div>
+        <div class="Topnav">
+                <ul>
+                  <li class="home"><a  href="/">Home</a></li>
+                  <li class="About_Us"><a  href="/AboutUs">About Us</a></li>
+                  <li class="Useful_Links"><a href="/QuickLinks">Useful Links</a></li>
+                  <li class="Image_Gallery"><a  href="/pants_page">Image Gallery</a></li>
+                  <li class="Popular_plant_Categories"><a href="/popular_pants_page">Popular plant Categories</a></li>
+                  <li class="Glossary"><a href="/Glossary">Glossary</a></li>
+                  <li class="Contact us"><a href="/ContactUs">Contact us</a></li>
+                </ul>
+            </div>
+    </header>
+
+    <main>
+        <h1>Search by Criteria</h1>
+        <p>Search by criteria to find plants that meet your requirements</p>
+
+        <div>
+            <h2>Criteria</h2>
+                <!-- Country and Climate -->
+                <fieldset>
+                    <legend>Country and Climate <i class="fas fa-eye"></i></legend>
+
+                    <div class="content">
+                        <img src="" alt="">
+                        <div id="fieldsetin">
+                            <div id="country-climate">
+                                <div id="country-div" class="dropdown">
+                                    Filter by country
+                                    <div class="dropdown">
+                                        <button class="btn btn-secondary dropdown-toggle" type="button"
+                                            id="countryDropDownButton" data-bs-toggle="dropdown" aria-expanded="false">Choose a country</button>
+
+                                        <!-- TODO: fetch countries from backend + automatically populate in JS -->
+                                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton"
+                                            id="country-dropdown">
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div id="temperatureSelect">
+                                    Choose filtering temperatures
+                                    <div class="dropdown">
+                                        <button class="btn btn-secondary dropdown-toggle" type="button"
+                                            id="temperatureDropDownButton" data-bs-toggle="dropdown"
+                                            aria-expanded="false" data-bs-auto-close="outside" >
+                                            Choose temperature
+                                        </button>
+                                        <!-- TODO: fetch countries from backend + automatically populate in JS -->
+                                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton"
+                                            id="temperature-dropdown">
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                            <div id="country-map">
+                                <img src="" alt="">
+                            </div>
+                        </div>
+                    </div>
+
+
+                </fieldset>
+                <fieldset>
+                    <legend data-bs-toggle="tooltip" title="Use the options below to search for plants based on a combination of characteristics.
+                    If in doubt about any characteristic, don't hesitate to leave a field blank.
+                    For a definition of each search term, refer to the glossary for help.">Basic Info <i
+                            class="fas fa-eye"></i></legend>
+                    <i class="fas fa-sync-alt reset"></i>
+
+                    <div class="content">
+                        <!-- Plant type section -->
+                        <div id="plantTypeSection" class="filterSections">
+                            <h5><a href="/Glossary#Letter-P-" class="linkGlossary">Plant Type</a></h5>
+                            <div id="plantType" class="filterSubSection">
+                            </div>
+                            <hr>
+                        </div>
+
+                        <!-- Light section -->
+                        <div id="lightSection" class="filterSections">
+                            <h5><a href="/Glossary#Letter-L-" class="linkGlossary">Light</a></h5>
+                            <div id="light" class="filterSubSection">
+                            </div>
+                            <hr>
+                        </div>
+
+                        <!-- Soil section -->
+                        <div id="soilMegaSection" class="megaSection">
+                            <div id="soilSection" class="filterSections">
+                                <h5><a href="/Glossary#Letter-S-" class="linkGlossary">Soil</a></h5>
+                                <div id="soil" class="filterSubSection">
+                                </div>
+
+                            </div>
+
+                            <!-- Soil pH section -->
+                            <div id="soilPHSection" class="filterSections">
+                                <h5><a href="/Glossary#Letter-S-" class="linkGlossary">Soil pH</a></h5>
+                                <div id="soilPH" class="filterSubSection checksMegaSection">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" id="acidSoilPH" value="0">
+                                        <label class="form-check-label" for="acidSoilPH">
+                                            Acidic <span>(pH&lt;7)</span>
+                                        </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" id="neutralSoilPH" value="7">
+                                        <label class="form-check-label" for="neutralSoilPH">
+                                            Neutral <span>(pH=7)</span>
+                                        </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" id="basicSoilPH" value="14">
+                                        <label class="form-check-label" for="basicSoilPH">
+                                            Basic <span>(pH&gt;7)</span>
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+
+
+                        <!-- water section -->
+                        <div id="waterSection" class="filterSections">
+                            <hr>
+                            <h5><a href="/Glossary#Letter-W-" class="linkGlossary">Water</a></h5>
+                            <div id="water" class="filterSubSection">
+                            </div>
+                            <hr>
+                        </div>
+
+                        <!-- Tolerance -->
+                        <div id="toleranceLifeCyleMegaSecion" class="megaSection">
+                            <div id="toleranceSection" class="filterSections">
+                                <h5>Tolerance</h5>
+                                <div id="tolerance" class="filterSubSection">
+                                    <table>
+                                        <tr>
+                                            <td class="toleranceRadioTitle">
+                                                <a href="/Glossary#Letter-H-" class="linkGlossary">Heat</a>
+                                            </td>
+                                            <td>
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="radio"
+                                                        name="toleranceHeatRadio" id="THRY">
+                                                    <label class="form-check-label" for="THRY">
+                                                        Yes
+                                                    </label>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="radio"
+                                                        name="toleranceHeatRadio" id="THRN">
+                                                    <label class="form-check-label" for="THRN">
+                                                        No
+                                                    </label>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="toleranceRadioTitle">
+                                                <a href="/Glossary#Letter-D-" class="linkGlossary">Drought</a>
+                                            </td>
+                                            <td>
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="radio"
+                                                        name="toleranceDroughtRadio" id="TDRY">
+                                                    <label class="form-check-label" for="TDRY">
+                                                        Yes
+                                                    </label>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="radio"
+                                                        name="toleranceDroughtRadio" id="TDRN">
+                                                    <label class="form-check-label" for="TDRN">
+                                                        No
+                                                    </label>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="toleranceRadioTitle">
+                                                <a href="/Glossary#Letter-F-" class="linkGlossary">Frost</a>
+                                            </td>
+                                            <td>
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="radio"
+                                                        name="toleranceFrostRadio" id="TFRY">
+                                                    <label class="form-check-label" for="TFRY">
+                                                        Yes
+                                                    </label>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="radio"
+                                                        name="toleranceFrostRadio" id="TFRN">
+                                                    <label class="form-check-label" for="TFRN">
+                                                        No
+                                                    </label>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="toleranceRadioTitle">
+                                                <a href="/Glossary#Letter-S-" class="linkGlossary">Salt</a>
+                                            </td>
+                                            <td>
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="radio"
+                                                        name="toleranceSaltRadio" id="TSRG">
+                                                    <label class="form-check-label" for="TSRG">
+                                                        Good
+                                                    </label>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="radio"
+                                                        name="toleranceSaltRadio" id="TSRM">
+                                                    <label class="form-check-label" for="TSRM">
+                                                        Moderate
+                                                    </label>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="radio"
+                                                        name="toleranceSaltRadio" id="TSRP">
+                                                    <label class="form-check-label" for="TSRP">
+                                                        Poor
+                                                    </label>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </div>
+                            </div>
+                            <!-- Life Cycle section -->
+                            <div id="lifeCycleSection" class="filterSections">
+                                <h5><a href="/Glossary#Letter-P-" class="linkGlossary">Life Cycle</a></h5>
+                                <div id="lifeCycle" class="filterSubSection checksMegaSection">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="lifeCycleRadio"
+                                            id="lifeCycleAnnual">
+                                        <label class="form-check-label" for="lifeCycleAnnual">
+                                            Annual
+                                        </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="lifeCycleRadio"
+                                            id="lifeCyclePerennial">
+                                        <label class="form-check-label" for="lifeCyclePerennial">
+                                            Perennial
+                                        </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="lifeCycleRadio"
+                                            id="lifeCycleBiennial">
+                                        <label class="form-check-label" for="lifeCycleBiennial">
+                                            Biennial
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </fieldset>
+
+                <fieldset>
+                    <legend data-bs-toggle="tooltip" title="Use the options below to search for plants based on a combination of characteristics.
+                    If in doubt about any characteristic, don't hesitate to leave a field blank.
+                    For a definition of each search term, refer to the glossary for help.">Plant Uses <i
+                            class="fas fa-eye"></i></legend>
+                            <i class="fas fa-sync-alt reset"></i>
+                    <div class="content">
+                        <!-- Outdoor section -->
+                        <div id="outdoorSection" class="filterSections">
+                            <h5><a href="/Glossary#Letter-U-" class="linkGlossary">Outdoor</a></h5>
+                            <div id="outdoor" class="filterSubSection checksMainContent">
+                                <table width="100%">
+                                    <tr>
+                                        <td>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" id="screen"
+                                                    value="screen">
+                                                <label class="form-check-label" for="screen">
+                                                    Screen
+                                                </label>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" id="hedge"
+                                                    value="hedge">
+                                                <label class="form-check-label" for="hedge">
+                                                    Hedge
+                                                </label>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" id="borderPlant"
+                                                    value="borderPlant">
+                                                <label class="form-check-label" for="borderPlant">
+                                                    Border Plant
+                                                </label>
+                                            </div>
+                                        </td>
+
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" id="massPlanting"
+                                                    value="massPlanting">
+                                                <label class="form-check-label" for="massPlanting">
+                                                    Mass Planting
+                                                </label>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" id="specimen"
+                                                    value="specimen">
+                                                <label class="form-check-label" for="specimen">
+                                                    Specimen
+                                                </label>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" id="street"
+                                                    value="street">
+                                                <label class="form-check-label" for="street">
+                                                    Street
+                                                </label>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                            <hr>
+                        </div>
+
+                        <!-- Specialized section -->
+                        <div id="specializedSection" class="filterSections">
+                            <h5><a href="/Glossary#Letter-U-" class="linkGlossary">Specialized</a></h5>
+                            <div id="specialized" class="filterSubSection checksMainContent">
+                                <table width="100%">
+                                    <tr>
+                                        <td>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" id="topiary"
+                                                    value="topiary">
+                                                <label class="form-check-label" for="topiary">
+                                                    Topiary
+                                                </label>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" id="container"
+                                                    value="container">
+                                                <label class="form-check-label" for="container">
+                                                    Container
+                                                </label>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" id="bonsai"
+                                                    value="bonsai">
+                                                <label class="form-check-label" for="bonsai">
+                                                    Bonsai
+                                                </label>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" id="espalier"
+                                                    value="espalier">
+                                                <label class="form-check-label" for="espalier">
+                                                    Espalier
+                                                </label>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" id="indoor"
+                                                    value="indoor">
+                                                <label class="form-check-label" for="indoor">
+                                                    Indoor
+                                                </label>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" id="sportsField"
+                                                    value="sportsField">
+                                                <label class="form-check-label" for="sportsField">
+                                                    Sports Field
+                                                </label>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </table>
+
+                            </div>
+                            <hr>
+                        </div>
+
+                        <!-- NativeEnvironment section -->
+                        <div id="nativeEnvironmentSection" class="filterSections">
+                            <h5><a href="/Glossary#Letter-U-" class="linkGlossary">Native Environment</a></h5>
+                            <div id="nativeEnvironment" class="filterSubSection checksMainContent">
+                                <table width="100%">
+                                    <tr>
+                                        <td>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" id="shade"
+                                                    value="shade">
+                                                <label class="form-check-label" for="shade">
+                                                    Shade
+                                                </label>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" id="windbreak"
+                                                    value="windbreak">
+                                                <label class="form-check-label" for="windbreak">
+                                                    Windbreak
+                                                </label>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" id="erosionControl"
+                                                    value="erosionControl">
+                                                <label class="form-check-label" for="erosionControl">
+                                                    Erosion Control
+                                                </label>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" id="pollutionTolerant"
+                                                    value="pollutionTolerant">
+                                                <label class="form-check-label" for="pollutionTolerant">
+                                                    Pollution Tolerant/Urban
+                                                </label>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" id="reclamation"
+                                                    value="reclamation">
+                                                <label class="form-check-label" for="reclamation">
+                                                    Reclamation
+                                                </label>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" id="wildlife"
+                                                    value="wildlife">
+                                                <label class="form-check-label" for="wildlife">
+                                                    Wildlife
+                                                </label>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" id="nativeToLebanon"
+                                                    value="nativeToLebanon">
+                                                <label class="form-check-label" for="nativeToLebanon">
+                                                    Native to Lebanon
+                                                </label>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                            <hr>
+                        </div>
+
+                        <!-- human use section -->
+                        <div id="humanUseSection" class="filterSections">
+                            <h5><a href="/Glossary#Letter-U-" class="linkGlossary">Human Use</a></h5>
+                            <div id="humanUse" class="filterSubSection checksMainContent">
+                                <table width="100%">
+                                    <tr>
+                                        <td>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" id="edible"
+                                                    value="edible">
+                                                <label class="form-check-label" for="edible">
+                                                    Edible
+                                                </label>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" id="medicinal"
+                                                    value="medicinal">
+                                                <label class="form-check-label" for="medicinal">
+                                                    Medicinal
+                                                </label>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" id="cutFlower"
+                                                    value="cutFlower">
+                                                <label class="form-check-label" for="cutFlower">
+                                                    Cut Flower/ Arrangement
+                                                </label>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                            <hr>
+                        </div>
+
+                        <!-- building section -->
+                        <div id="buildingSection" class="filterSections">
+                            <h5><a href="/Glossary#Letter-U-" class="linkGlossary">Building</a></h5>
+                            <div id="building" class="filterSubSection checksMainContent">
+                                <table width="100%">
+                                    <tr>
+                                        <td>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" id="intensiveRoof"
+                                                    value="intensiveRoof">
+                                                <label class="form-check-label" for="intensiveRoof">
+                                                    Intensive Green Roof
+                                                </label>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" id="extensiveRoof"
+                                                    value="extensiveRoof">
+                                                <label class="form-check-label" for="extensiveRoof">
+                                                    Extensive Green Roof
+                                                </label>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" id="facade"
+                                                    value="facade">
+                                                <label class="form-check-label" for="cutFlower">
+                                                    Facade
+                                                </label>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                            <hr>
+                        </div>
+                    </div>
+                </fieldset>
+
+                <!-- size/shape -->
+                <fieldset>
+                    <legend data-bs-toggle="tooltip" title="Use the options below to search for plants based on a combination of characteristics.
+                    If in doubt about any characteristic, don't hesitate to leave a field blank.
+                    For a definition of each search term, refer to the glossary for help.">Size/Shape <i
+                            class="fas fa-eye"></i></legend>
+                            <i class="fas fa-sync-alt reset"></i>
+                    <div class="content">
+                        <!-- canopy shape section -->
+                        <div id="canopyShapeSection" class="filterSections">
+                            <h5><a href="/Glossary#Letter-C-" class="linkGlossary">Canopy Shape</a></h5>
+                            <div id="canopyShape" class="filterSubSection">
+                            </div>
+                            <hr>
+                        </div>
+
+                        <div id="plantSizeMegaSection" class="megaSection">
+                            <div id="plantHeightSection" class="filterSections">
+                                <h5><a href="/Glossary#Letter-P-" class="linkGlossary">Plant Height</a></h5>
+                                <div id="plantHeight">
+                                    <img class="treeImg"
+                                        src="https://landscapeplants.aub.edu.lb/images/search/plant/tree-vertical.png"
+                                        alt="tree height">
+                                    <table>
+                                        <tr>
+                                            <td>
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="checkbox" id="height0"
+                                                        value="0 to 0.5">
+                                                    <label class="form-check-label" for="height0">
+                                                        0-0.5 (m)
+                                                    </label>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="checkbox" id="height0.5"
+                                                        value="0.5 to 1">
+                                                    <label class="form-check-label" for="height0.5">
+                                                        0.5-1 (m)
+                                                    </label>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="checkbox" id="height1"
+                                                        value="1 to 1.5">
+                                                    <label class="form-check-label" for="height1">
+                                                        1-1.5 (m)
+                                                    </label>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="checkbox" id="height1.5"
+                                                        value="1.5 to 3">
+                                                    <label class="form-check-label" for="height1.5">
+                                                        1.5-3 (m)
+                                                    </label>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="checkbox" id="height3"
+                                                        value="3 to 5">
+                                                    <label class="form-check-label" for="height3">
+                                                        3-5 (m)
+                                                    </label>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="checkbox" id="height5"
+                                                        value="5 to 8">
+                                                    <label class="form-check-label" for="height5">
+                                                        5-8 (m)
+                                                    </label>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="checkbox" id="height8"
+                                                        value="8 to 15">
+                                                    <label class="form-check-label" for="height8">
+                                                        8-15 (m)
+                                                    </label>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="checkbox" id="height15"
+                                                        value="15 to 23">
+                                                    <label class="form-check-label" for="height15">
+                                                        15-23 (m)
+                                                    </label>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="checkbox" id="height23"
+                                                        value="23+">
+                                                    <label class="form-check-label" for="height23">
+                                                        23+ (m)
+                                                    </label>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </div>
+                            </div>
+
+                            <div id="plantSpreadSection" class="filterSections">
+                                <h5><a href="/Glossary#Letter-P-" class="linkGlossary">Plant Spread</a></h5>
+                                <div id="plantSpread">
+                                    <img class="treeImg"
+                                        src="https://landscapeplants.aub.edu.lb/images/search/plant/tree-horizontal.png"
+                                        alt="tree spread">
+                                    <table>
+                                        <tr>
+                                            <td>
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="checkbox" id="spread0"
+                                                        value="0 to 0.5">
+                                                    <label class="form-check-label" for="spread0">
+                                                        0-0.5 (m)
+                                                    </label>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="checkbox" id="spread0.5"
+                                                        value="0.5 to 1">
+                                                    <label class="form-check-label" for="spread0.5">
+                                                        0.5-1 (m)
+                                                    </label>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="checkbox" id="spread1"
+                                                        value="1 to 1.5">
+                                                    <label class="form-check-label" for="spread1">
+                                                        1-1.5 (m)
+                                                    </label>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="checkbox" id="spread1.5"
+                                                        value="1.5 to 3">
+                                                    <label class="form-check-label" for="spread1.5">
+                                                        1.5-3 (m)
+                                                    </label>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="checkbox" id="spread3"
+                                                        value="3 to 5">
+                                                    <label class="form-check-label" for="spread3">
+                                                        3-5 (m)
+                                                    </label>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="checkbox" id="spread5"
+                                                        value="5 to 8">
+                                                    <label class="form-check-label" for="spread5">
+                                                        5-8 (m)
+                                                    </label>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="checkbox" id="spread8"
+                                                        value="8 to 10">
+                                                    <label class="form-check-label" for="spread8">
+                                                        8-10 (m)
+                                                    </label>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="checkbox" id="spread10"
+                                                        value="10 to 15">
+                                                    <label class="form-check-label" for="spread10">
+                                                        10-15 (m)
+                                                    </label>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="checkbox" id="spread15"
+                                                        value="15+">
+                                                    <label class="form-check-label" for="spread15">
+                                                        15+ (m)
+                                                    </label>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </div>
+
+                            </div>
+
+
+                        </div>
+                        <hr>
+                        <div id="plantGrowthMegaSection" class="megaSection">
+                            <div id="plantTimeSection" class="filterSections growthFlex">
+                                <h5><a href="/Glossary#Letter-T-" class="linkGlossary">Time to Ultimate Height</a></h5>
+                                <div id="plantTime">
+                                    <img class="growthImg"
+                                        src="https://landscapeplants.aub.edu.lb/images/search/plant/tree-watch.png"
+                                        alt="watch">
+                                    <table>
+                                        <tr>
+                                            <td>
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="checkbox" id="years0"
+                                                        value="0">
+                                                    <label class="form-check-label" for="years0">
+                                                        0-1 (y)
+                                                    </label>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="checkbox" id="years1"
+                                                        value="1">
+                                                    <label class="form-check-label" for="years1">
+                                                        1-2 (y)
+                                                    </label>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="checkbox" id="years2"
+                                                        value="2">
+                                                    <label class="form-check-label" for="years2">
+                                                        2-5 (y)
+                                                    </label>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="checkbox" id="years5"
+                                                        value="5">
+                                                    <label class="form-check-label" for="years5">
+                                                        5-10 (y)
+                                                    </label>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="checkbox" id="years10"
+                                                        value="10">
+                                                    <label class="form-check-label" for="years10">
+                                                        10-20 (y)
+                                                    </label>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="checkbox" id="years20"
+                                                        value="20">
+                                                    <label class="form-check-label" for="years20">
+                                                        20-50 (y)
+                                                    </label>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="checkbox" id="years50"
+                                                        value="50">
+                                                    <label class="form-check-label" for="years50">
+                                                        50+ (y)
+                                                    </label>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </div>
+                            </div>
+
+                            <div id="plantRateSection" class="filterSections growthFlex">
+                                <h5><a href="/Glossary#Letter-G-" class="linkGlossary">Growth Rate</a></h5>
+                                <div id="plantRate">
+                                    <img src="https://landscapeplants.aub.edu.lb/images/search/plant/tree-rate.png"
+                                        alt="tree height">
+                                    <table>
+                                        <tr>
+                                            <td>
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="checkbox" id="rateSlow"
+                                                        value="slow">
+                                                    <label class="form-check-label" for="rateSlow">
+                                                        slow
+                                                    </label>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="checkbox" id="rateModerate"
+                                                        value="moderate">
+                                                    <label class="form-check-label" for="rateModerate">
+                                                        moderate
+                                                    </label>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="checkbox" id="rateFast"
+                                                        value="fast">
+                                                    <label class="form-check-label" for="rateFast">
+                                                        fast
+                                                    </label>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </div>
+                            </div>
+
+                        </div>
+
+                    </div>
+                </fieldset>
+
+                <!-- Leaf -->
+                <fieldset>
+                    <legend data-bs-toggle="tooltip" title="Use the options below to search for plants based on a combination of characteristics.
+                    If in doubt about any characteristic, don't hesitate to leave a field blank.
+                    For a definition of each search term, refer to the glossary for help.">Leaf <i
+                            class="fas fa-eye"></i>
+                    </legend>
+                    <i class="fas fa-sync-alt reset"></i>
+                    <div class="content">
+                        <div id="plantColorMegaSection" class="megaSection">
+                            <!-- Color in Growing Season section -->
+                            <div id="plantColorGrowSection" class="filterSections">
+                                <h5>Color in Growing Season</h5>
+                                <div id="plantColorGrow" class="filterSubSection">
+                                </div>
+                            </div>
+
+                            <!-- Color in Changing Season section -->
+                            <div id="plantColorChangeSection" class="filterSections">
+                                <h5>Color in Changing Season</h5>
+                                <div id="plantColorChange" class="filterSubSection">
+                                </div>
+                            </div>
+                        </div>
+                        <hr>
+                        <div id="plantPersScentMegaSection" class="megaSection">
+                            <!-- Persistence section -->
+
+                            <div id="persistenceSection" class="filterSections">
+                                <h5><a href="/Glossary#Letter-L-" class="linkGlossary">Persistence</a></h5>
+                                <div id="persistence" class="filterSubSection checksMegaSection">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="persistenceRadio"
+                                            id="persistenceEvergreen">
+                                        <label class="form-check-label" for="persistenceEvergreen">
+                                            Evergreen
+                                        </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="persistenceRadio"
+                                            id="persistenceSemiEvergreen">
+                                        <label class="form-check-label" for="persistenceSemiEvergreen">
+                                            Semi Evergreen
+                                        </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="persistenceRadio"
+                                            id="persistenceDeciduous">
+                                        <label class="form-check-label" for="persistenceDeciduous">
+                                            Deciduous
+                                        </label>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                            <!-- Scent section -->
+                            <div id="scentSection" class="filterSections">
+                                <h5><a href="/Glossary#Letter-L-" class="linkGlossary">Scent</a></h5>
+                                <div id="scent" class="filterSubSection checksMegaSection">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="scentRadio"
+                                            id="scentPleasant">
+                                        <label class="form-check-label" for="scentPleasant">
+                                            Pleasant
+                                        </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="scentRadio"
+                                            id="scentUnpleasant">
+                                        <label class="form-check-label" for="scentUnpleasant">
+                                            Unpleasant
+                                        </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="scentRadio"
+                                            id="scentNoFragrance">
+                                        <label class="form-check-label" for="scentNoFragrance">
+                                            No Fragrance
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </fieldset>
+
+                <fieldset>
+                    <legend data-bs-toggle="tooltip" title="Use the options below to search for plants based on a combination of characteristics.
+                    If in doubt about any characteristic, don't hesitate to leave a field blank.
+                    For a definition of each search term, refer to the glossary for help.">Flower <i
+                            class="fas fa-eye"></i>
+                    </legend>
+                    <i class="fas fa-sync-alt reset"></i>
+                    <div class="content">
+                        <!-- plant Color section -->
+                        <div id="plantFlowerColorSection" class="filterSections">
+                            <h5>Color</h5>
+                            <div id="plantFlowerColor" class="filterSubSection">
+                            </div>
+                        </div>
+                        <hr>
+
+                        <div id="plantPersScentMegaSection" class="megaSection">
+                            <!-- Season section -->
+                            <div id="seasonSection" class="filterSections">
+                                <h5><a href="/Glossary#Letter-F-" class="linkGlossary">Season</a></h5>
+                                <div id="season" class="filterSubSection checksMegaSection">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="seasonRadio"
+                                            id="seasonSpring">
+                                        <label class="form-check-label" for="seasonSpring">
+                                            Spring
+                                        </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="seasonRadio"
+                                            id="seasonSummer">
+                                        <label class="form-check-label" for="seasonSummer">
+                                            Summer
+                                        </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="seasonRadio" id="seasonFall">
+                                        <label class="form-check-label" for="seasonFall">
+                                            Fall
+                                        </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="seasonRadio"
+                                            id="seasonWinter">
+                                        <label class="form-check-label" for="seasonWinter">
+                                            Winter
+                                        </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="seasonRadio"
+                                            id="seasonYearRound">
+                                        <label class="form-check-label" for="seasonYearRound">
+                                            Year Round
+                                        </label>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                            <!-- Scent section -->
+                            <div id="scentSectionFlower" class="filterSections">
+                                <h5><a href="/Glossary#Letter-F-" class="linkGlossary">Scent</a></h5>
+                                <div id="scentFlower" class="filterSubSection checksMegaSection">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="scentFlowerRadio"
+                                            id="scentFlowerPleasant">
+                                        <label class="form-check-label" for="scentFlowerPleasant">
+                                            Pleasant
+                                        </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="scentFlowerRadio"
+                                            id="scentFlowerUnpleasant">
+                                        <label class="form-check-label" for="scentFlowerUnpleasant">
+                                            Unpleasant
+                                        </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="scentFlowerRadio"
+                                            id="scentFlowerNoFragrance">
+                                        <label class="form-check-label" for="scentFlowerNoFragrance">
+                                            No Fragrance
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Showiness section -->
+                            <div id="showinessSection" class="filterSections">
+                                <h5><a href="/Glossary#Letter-F-" class="linkGlossary">Showiness</a></h5>
+                                <div id="showiness" class="filterSubSection checksMegaSection">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="showinessRadio"
+                                            id="showinessYes">
+                                        <label class="form-check-label" for="showinessYes">
+                                            Yes
+                                        </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="showinessRadio"
+                                            id="showinessNo">
+                                        <label class="form-check-label" for="showinessNo">
+                                            No
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <hr>
+                    </div>
+                </fieldset>
+
+                <fieldset>
+                    <legend data-bs-toggle="tooltip" title="Use the options below to search for plants based on a combination of characteristics.
+                    If in doubt about any characteristic, don't hesitate to leave a field blank.
+                    For a definition of each search term, refer to the glossary for help.">Fruit <i
+                            class="fas fa-eye"></i>
+                    </legend>
+                    <i class="fas fa-sync-alt reset"></i>
+                    <div class="content">
+                        <!-- fruit Color section -->
+                        <div id="fruitColorSection" class="filterSections">
+                            <h5><a href="/Glossary#Letter-F-" class="linkGlossary">Color</a></h5>
+                            <div id="fruitColor" class="filterSubSection">
+                            </div>
+                        </div>
+                        <hr>
+
+                        <div id="fruitInfoMegaSection" class="megaSection">
+
+                            <!-- ShowinessFruit section -->
+                            <div id="showinessfruitSection" class="filterSections">
+                                <h5><a href="/Glossary#Letter-F-" class="linkGlossary">Showiness</a></h5>
+                                <div id="showinessfruit" class="filterSubSection checksMegaSection">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="showinessfruitRadio"
+                                            id="showinessfruitYes">
+                                        <label class="form-check-label" for="showinessfruitYes">
+                                            Yes
+                                        </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="showinessfruitRadio"
+                                            id="showinessfruitNo">
+                                        <label class="form-check-label" for="showinessfruitNo">
+                                            No
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Fruit Type section -->
+                            <div id="fruitTypeSection" class="filterSections">
+                                <h5><a href="/Glossary#Letter-F-" class="linkGlossary">Fruit Type</a></h5>
+                                <div id="fruitType" class="filterSubSection checksMegaSection">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="fruitTypeRadio"
+                                            id="fruitTypeDry">
+                                        <label class="form-check-label" for="fruitTypeDry">
+                                            Dry
+                                        </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="fruitTypeRadio"
+                                            id="fruitTypeFleshy">
+                                        <label class="form-check-label" for="fruitTypeFleshy">
+                                            Fleshy
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Season section -->
+                            <div id="seasonFruitFruitSection" class="filterSections">
+                                <h5><a href="/Glossary#Letter-F-" class="linkGlossary">Season</a></h5>
+                                <div id="seasonFruit" class="filterSubSection checksMegaSection">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="seasonFruitRadio"
+                                            id="seasonFruitSpring">
+                                        <label class="form-check-label" for="seasonFruitSpring">
+                                            Spring
+                                        </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="seasonFruitRadio"
+                                            id="seasonFruitSummer">
+                                        <label class="form-check-label" for="seasonFruitSummer">
+                                            Summer
+                                        </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="seasonFruitRadio"
+                                            id="seasonFruitFall">
+                                        <label class="form-check-label" for="seasonFruitFall">
+                                            Fall
+                                        </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="seasonFruitRadio"
+                                            id="seasonFruitWinter">
+                                        <label class="form-check-label" for="seasonFruitWinter">
+                                            Winter
+                                        </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="seasonFruitRadio"
+                                            id="seasonFruitYearRound">
+                                        <label class="form-check-label" for="seasonFruitYearRound">
+                                            Year Round
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div id="fruitSizeSection" class="filterSections">
+                                <h5><a href="/Glossary#Letter-U-" class="linkGlossary">Fruit Size</a></h5>
+                                <div id="fruitSize">
+                                    <img class="treeImg"
+                                        src="https://landscapeplants.aub.edu.lb/images/search/plant/fruit-size.png"
+                                        alt="fruit size">
+                                    <table>
+                                        <tr>
+                                            <td>
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="checkbox" id="size0"
+                                                        value="0">
+                                                    <label class="form-check-label" for="size0">
+                                                        0-1.5 (cm)
+                                                    </label>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="checkbox" id="size1.5"
+                                                        value="1.5">
+                                                    <label class="form-check-label" for="size1.5">
+                                                        1.5-3 (cm)
+                                                    </label>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="checkbox" id="size3"
+                                                        value="3">
+                                                    <label class="form-check-label" for="size3">
+                                                        3-7 (cm)
+                                                    </label>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="checkbox" id="size7"
+                                                        value="7">
+                                                    <label class="form-check-label" for="size7">
+                                                        7-10 (cm)
+                                                    </label>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="checkbox" id="size10"
+                                                        value="10">
+                                                    <label class="form-check-label" for="size10">
+                                                        10-20 (cm)
+                                                    </label>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="checkbox" id="size20+"
+                                                        value="20+">
+                                                    <label class="form-check-label" for="size20+">
+                                                        20+ (cm)
+                                                    </label>
+                                                </div>
+                                            </td>
+                                        </tr>
+
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </fieldset>
+
+                <fieldset>
+                    <legend data-bs-toggle="tooltip" title="Use the options below to search for plants based on a combination of characteristics.
+                    If in doubt about any characteristic, don't hesitate to leave a field blank.
+                    For a definition of each search term, refer to the glossary for help.">Trunk <i
+                            class="fas fa-eye"></i>
+                    </legend>
+                    <i class="fas fa-sync-alt reset"></i>
+                    <div class="content">
+                        <!-- trunkEsthetic section -->
+                        <div id="trunkMegaSection" class="megaSection">
+
+                            <div id="trunkEstheticSection" class="filterSections">
+                                <h5><a href="/Glossary#Letter-T-" class="linkGlossary">Trunk Esthetic</a></h5>
+                                <div id="trunkEsthetic" class="filterSubSection checksMainContent">
+                                    <table width="100%">
+                                        <tr>
+                                            <td>
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="checkbox" id="trunkShowy"
+                                                        value="Showy">
+                                                    <label class="form-check-label" for="trunkShowy">
+                                                        Showy
+                                                    </label>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="checkbox" id="trunkNotShowy"
+                                                        value="NotShowy">
+                                                    <label class="form-check-label" for="trunkNotShowy">
+                                                        Not Showy
+                                                    </label>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="checkbox" id="trunkSmooth"
+                                                        value="Smooth">
+                                                    <label class="form-check-label" for="trunkSmooth">
+                                                        Smooth Control
+                                                    </label>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="checkbox"
+                                                        id="trunkIntermediate" value="Intermediate">
+                                                    <label class="form-check-label" for="trunkIntermediate">
+                                                        Intermediate Texture
+                                                    </label>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="checkbox" id="trunkRough"
+                                                        value="Rough">
+                                                    <label class="form-check-label" for="trunkRough">
+                                                        Rough Texture
+                                                    </label>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="checkbox" id="trunkFissured"
+                                                        value="Fissured">
+                                                    <label class="form-check-label" for="trunkFissured">
+                                                        Deeply Fissured
+                                                    </label>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="checkbox" id="trunkPapery"
+                                                        value="Papery">
+                                                    <label class="form-check-label" for="trunkPapery">
+                                                        Papery
+                                                    </label>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="checkbox" id="trunkSpines"
+                                                        value="Spines">
+                                                    <label class="form-check-label" for="trunkSpines">
+                                                        Spines
+                                                    </label>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="checkbox" id="trunkColored"
+                                                        value="Colored">
+                                                    <label class="form-check-label" for="trunkColored">
+                                                        Colored
+                                                    </label>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </div>
+
+                            </div>
+
+                            <!-- trunkCrownshaft section -->
+                            <div id="trunkCrownshaftSection" class="filterSections">
+                                <h5><a href="/Glossary#Letter-C-" class="linkGlossary">Crownshaft</a> (for palms)</h5>
+                                <div id="trunkCrownshaft" class="filterSubSection checksMegaSection">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="trunkCrownshaftRadio"
+                                            id="trunkCrownshaftAvailable">
+                                        <label class="form-check-label" for="trunkCrownshaftAvailable">
+                                            Available
+                                        </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="trunkCrownshaftRadio"
+                                            id="trunkCrownshaftNotAvailable">
+                                        <label class="form-check-label" for="trunkCrownshaftNotAvailable">
+                                            Not Available
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </fieldset>
+
+                <!-- management section -->
+                <fieldset>
+                    <legend data-bs-toggle="tooltip" title="Use the options below to search for plants based on a combination of characteristics.
+                    If in doubt about any characteristic, don't hesitate to leave a field blank.
+                    For a definition of each search term, refer to the glossary for help."> Management <i
+                            class="fas fa-eye"></i>
+                    </legend>
+                    <i class="fas fa-sync-alt reset"></i>
+                    <div class="content">
+                        <div id="firstManagementMegaSection" class="megaSection">
+                            <div id="ediblePlantsSection" class="filterSections">
+                                <h5><a href="/Glossary#Letter-E-" class="linkGlossary">Edible Plant Parts</a></h5>
+                                <div id="ediblePlants" class="filterSubSection checksMegaSection">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="ediblePlantsRadio"
+                                            id="ediblePlantsYes">
+                                        <label class="form-check-label" for="ediblePlantsYes">
+                                            Yes
+                                        </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="ediblePlantsRadio"
+                                            id="ediblePlantsNo">
+                                        <label class="form-check-label" for="ediblePlantsNo">
+                                            No
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- managementLitter section -->
+                            <div id="managementLitterSection" class="filterSections">
+                                <h5><a href="/Glossary#Letter-L-" class="linkGlossary">Fruit/Leaves/Flower Litter</a></h5>
+                                <div id="managementLitter" class="filterSubSection checksMegaSection">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="managementLitterRadio"
+                                            id="managementLitterYes">
+                                        <label class="form-check-label" for="managementLitterYes">
+                                            Yes
+                                        </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="managementLitterRadio"
+                                            id="managementLitterNo">
+                                        <label class="form-check-label" for="managementLitterNo">
+                                            No
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- managementRooting section -->
+                            <div id="managementRootingSection" class="filterSections">
+                                <h5><a href="/Glossary#Letter-S-" class="linkGlossary">Surface Rooting</a></h5>
+                                <div id="managementRooting" class="filterSubSection checksMegaSection">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="managementRootingRadio"
+                                            id="managementRootingYes">
+                                        <label class="form-check-label" for="managementRootingYes">
+                                            Yes
+                                        </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="managementRootingRadio"
+                                            id="managementRootingNo">
+                                        <label class="form-check-label" for="managementRootingNo">
+                                            No
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- managementToxicity section -->
+                            <div id="managementToxicitySection" class="filterSections">
+                                <h5><a href="/Glossary#Letter-P-" class="linkGlossary">Plant Toxicity</a></h5>
+                                <div id="managementToxicity" class="filterSubSection checksMegaSection">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="managementToxicityRadio"
+                                            id="managementToxicityYes">
+                                        <label class="form-check-label" for="managementToxicityYes">
+                                            Yes
+                                        </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="managementToxicityRadio"
+                                            id="managementToxicityNo">
+                                        <label class="form-check-label" for="managementToxicityNo">
+                                            No
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <hr>
+                        <div id="secondManagementMegaSection" class="megaSection">
+                            <!-- managementInvasive section -->
+                            <div id="managementInvasiveSection" class="filterSections">
+                                <h5><a href="/Glossary#Letter-I-" class="linkGlossary">Invasive Potential</a></h5>
+                                <div id="managementInvasive" class="filterSubSection checksMegaSection">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="managementInvasiveRadio"
+                                            id="managementInvasiveYes">
+                                        <label class="form-check-label" for="managementInvasiveYes">
+                                            Yes
+                                        </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="managementInvasiveRadio"
+                                            id="managementInvasiveNo">
+                                        <label class="form-check-label" for="managementInvasiveNo">
+                                            No
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- managementDiseases section -->
+                            <div id="managementDiseasesSection" class="filterSections">
+                                <h5><a href="/Glossary#Letter-S-" class="linkGlossary">Suceptibility to Diseases</a></h5>
+                                <div id="managementDiseases" class="filterSubSection checksMegaSection">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="managementDiseasesRadio"
+                                            id="managementDiseasesYes">
+                                        <label class="form-check-label" for="managementDiseasesYes">
+                                            Yes
+                                        </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="managementDiseasesRadio"
+                                            id="managementDiseasesNo">
+                                        <label class="form-check-label" for="managementDiseasesNo">
+                                            No
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- managementPruning section -->
+                            <div id="managementPruningSection" class="filterSections">
+                                <h5><a href="/Glossary#Letter-P-" class="linkGlossary">Pruning Requirements</a></h5>
+                                <div id="managementPruning" class="filterSubSection checksMegaSection">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="managementPruningRadio"
+                                            id="managementPruningNeeded">
+                                        <label class="form-check-label" for="managementPruningNeeded">
+                                            Needed
+                                        </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="managementPruningRadio"
+                                            id="managementPruningLittleNeeded">
+                                        <label class="form-check-label" for="managementPruningLittleNeeded">
+                                            Little Needed
+                                        </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="managementPruningRadio"
+                                            id="managementPruningNone">
+                                        <label class="form-check-label" for="managementPruningNone">
+                                            None
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- managementLifeSpan section -->
+                            <div id="managementLifeSpanSection" class="filterSections">
+                                <h5><a href="/Glossary#Letter-L-" class="linkGlossary">Life Span (years)</a></h5>
+                                <div id="managementLifeSpan" class="filterSubSection checksMegaSection">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="managementLifeSpanRadio"
+                                            id="managementLifeSpanLT25">
+                                        <label class="form-check-label" for="managementLifeSpanLT25">
+                                            &lt;25
+                                        </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="managementLifeSpanRadio"
+                                            id="managementLifeSpan25">
+                                        <label class="form-check-label" for="managementLifeSpan25">
+                                            25-50
+                                        </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="managementLifeSpanRadio"
+                                            id="managementLifeSpanGT25">
+                                        <label class="form-check-label" for="managementLifeSpanGT25">
+                                            &gt;50
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </fieldset>
+
+                <div id="floatButtons">
+                    <button type="button" class="btn btn-primary" id="submitButton">Submit</button>
+                    <button type="button" class="btn btn-light" id="resetButton">Reset</button>
+                </div>
+                
+
+        </div>
+    </main>
+
+    <footer>
+        <ul class="list-inline">
+            <li class="list-inline-item"><a href="https://www.aub.edu.lb/Libraries/Services/Pages/Copyright.aspx" target="_blank">Copyright</a></li>
+            <li class="list-inline-item"><a href="/Citing">Citing the plant database</a></li>
+            <li class="list-inline-item"><a href="/Acknowledgments">Acknowledgements </a></li>
+            <li class="list-inline-item"><a href="/ContactUs">Contact Us</a></li>
+        </ul>
+        <p class="copyright">American University of Beirut © 2021</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
